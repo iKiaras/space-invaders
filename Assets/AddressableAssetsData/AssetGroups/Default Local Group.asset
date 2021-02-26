@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 988540208e371624e9f2d8ec1d4ba479
+  m_SerializeEntries:
+  - m_GUID: 4fd9c4b4e7ff48a439b0b6a552dcc3f4
+    m_Address: Assets/Prefabs/MainCharacter.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6c629b9e2a5cf574e91170335521b4ab
+    m_Address: Assets/Meshes/Characters/NPC_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 77583b8cce4a5f04380d1d6445b27b6f
+    m_Address: Assets/ScriptableObjects/Laser.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9bf66483380fce64b9509590aba61e2c
+    m_Address: Assets/ScriptableObjects/NPC_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9f9856ef3a07a744480f9ffe50f83445
+    m_Address: Assets/Meshes/Characters/NPC_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c64f43b1854b5b44ba6d2f484eaccb03
+    m_Address: Assets/ScriptableObjects/NPC_3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d778f662b38d944478a87ec9a58004cf
+    m_Address: Assets/Meshes/Characters/NPC_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: df2d11c74e67274489798dfba020cdfc
+    m_Address: Assets/Prefabs/NPC_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f8538915f8116de46a726fdf06fd14e3
+    m_Address: Assets/ScriptableObjects/EnemyLaser.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 13b3d68a4bb44f94aa2ea7f44694dfa6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c7fc9495a3b17c84b8cac890a85bbef7, type: 2}
+    - {fileID: 11400000, guid: 27f95967026d2f745be3f906e56fd894, type: 2}

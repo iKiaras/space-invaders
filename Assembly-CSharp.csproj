@@ -52,7 +52,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\LaserScripts\EnemyLaserObject.cs" />
      <Compile Include="Assets\Scripts\LoadingScripts\SceneLoaderCallback.cs" />
-     <Compile Include="Assets\Scripts\PlayerScripts\HighScoreScene.cs" />
+     <Compile Include="Assets\Scripts\SceneControlScript\HighScoreScene.cs" />
      <Compile Include="Assets\Scripts\LoadingScripts\LoadingProgressBar.cs" />
      <Compile Include="Assets\Scripts\ScriptableOjbectsScript\Laser.cs" />
      <Compile Include="Assets\Scripts\LoadingScripts\SceneLoader.cs" />
@@ -61,7 +61,7 @@
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerScore.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\EnemyController.cs" />
-     <Compile Include="Assets\Scripts\PlayerScripts\HighScore.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\HighScoreDTO.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\ScriptableOjbectsScript\NpcScriptableObjects.cs" />
@@ -73,8 +73,12 @@
      <Compile Include="Assets\Scripts\States\PauseState.cs" />
      <Compile Include="Assets\Scripts\States\PlayState.cs" />
      <Compile Include="Assets\Scripts\States\PlayerState.cs" />
-     <Compile Include="Assets\DI\DefaultInstaller.cs" />
-     <Compile Include="Assets\Scripts\LoadingScripts\ILoader.cs" />
+     <Compile Include="Assets\Scripts\DI\DefaultInstaller.cs" />
+     <Compile Include="Assets\Scripts\DI\ILoader.cs" />
+     <Compile Include="Assets\Scripts\DI\LoaderImpl.cs" />
+     <Compile Include="Assets\Scripts\DI\IHighScores.cs" />
+     <Compile Include="Assets\Scripts\DI\HighScoresImpl.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\HighScoreListDTO.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -1,21 +1,32 @@
-﻿using UnityEngine;
+﻿using DI;
+using UnityEngine;
+using Zenject;
 
-public class LaserController : MonoBehaviour
+namespace LaserScripts
 {
-    private Transform _laserTransform;
-    private float _damageImmuneIntervalTime = 3f;
-    private float _nextDamage;
-    private bool _isEnemy;
-
-
-    public void SpawnLaser(Transform spawnPosition)
+    public class LaserController : MonoBehaviour
     {
-        Instantiate(Loader.Instance.laserGameObject, spawnPosition.position, spawnPosition.rotation);
-    }
+        private Transform _laserTransform;
+        private float _damageImmuneIntervalTime = 3f;
+        private float _nextDamage;
+        private bool _isEnemy;
+        private ILoader _loader;
 
-    public void SpawnEnemyLaser(Transform spawnPosition)
-    {
-        Vector3 position = new Vector3(spawnPosition.position.x, spawnPosition.position.y - 1, spawnPosition.position.z);
-        Instantiate(Loader.Instance.enemyLaserGameObject, position, spawnPosition.rotation);
+        public void SpawnLaser(Transform spawnPosition)
+        {
+            Instantiate(_loader.GetLaserGameObject(), spawnPosition.position, spawnPosition.rotation);
+        }
+
+        public void SpawnEnemyLaser(Transform spawnPosition)
+        {
+            Vector3 position = new Vector3(spawnPosition.position.x, spawnPosition.position.y - 1, spawnPosition.position.z);
+            Instantiate(_loader.GetEnemyLaserGameObject(), position, spawnPosition.rotation);
+        }
+
+        [Inject]
+        public void SetLoader(ILoader loader)
+        {
+            _loader = loader;
+        }
     }
 }

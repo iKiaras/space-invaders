@@ -1,24 +1,35 @@
-﻿using UnityEngine;
+﻿using DI;
+using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
-public class LoadingProgressBar : MonoBehaviour
+namespace LoadingScripts
 {
-    private Image _loadingBar;
-
-    private void Awake()
+    public class LoadingProgressBar : MonoBehaviour
     {
-        _loadingBar = GetComponent<Image>();
-    }
-
-    private void Update()
-    {
-        if (!Loader.Instance.IsloadSceneComplete())
+        private Image _loadingBar;
+        private ILoader _loader;
+        private void Awake()
         {
-            _loadingBar.fillAmount = Loader.Instance.GetLoadingProgress();
+            _loadingBar = GetComponent<Image>();
         }
-        else
+
+        private void Update()
         {
-            _loadingBar.fillAmount = SceneLoader.GetLoadingProgress();
+            if (!_loader.IsLoadSceneComplete())
+            {
+                _loadingBar.fillAmount = _loader.GetProgress();
+            }
+            else
+            {
+                _loadingBar.fillAmount = SceneLoader.GetLoadingProgress();
+            }
+        }
+
+        [Inject]
+        public void SetLoader(ILoader loader)
+        {
+            _loader = loader;
         }
     }
 }

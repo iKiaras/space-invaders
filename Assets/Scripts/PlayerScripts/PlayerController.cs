@@ -1,4 +1,5 @@
-﻿using States;
+﻿using LaserScripts;
+using States;
 using States.PlayerStates;
 using UnityEngine;
 

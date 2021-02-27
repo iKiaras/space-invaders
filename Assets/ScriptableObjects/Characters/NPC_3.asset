@@ -13,6 +13,3 @@ MonoBehaviour:
   m_Name: NPC_3
   m_EditorClassIdentifier: 
   body: {fileID: 6101590968867893648, guid: c7fb27ad512d29c4bb64ca61dcf7cf91, type: 3}
-  attackSpeed: 1
-  pointsGiven: 0
-  name: Rocket

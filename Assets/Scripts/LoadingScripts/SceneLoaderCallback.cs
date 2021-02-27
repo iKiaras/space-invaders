@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class SceneLoaderCallback : MonoBehaviour
+namespace LoadingScripts
 {
-    private bool _isFirstUpdate = true;
-
-    // Update is called once per frame
-    void Update()
+    public class SceneLoaderCallback : MonoBehaviour
     {
-        if (_isFirstUpdate)
+        private bool _isFirstUpdate = true;
+
+        // Update is called once per frame
+        void Update()
         {
-            _isFirstUpdate = false;
-            SceneLoader.SceneLoaderCallback();
+            if (_isFirstUpdate)
+            {
+                _isFirstUpdate = false;
+                SceneLoader.SceneLoaderCallback();
+            }
         }
     }
 }

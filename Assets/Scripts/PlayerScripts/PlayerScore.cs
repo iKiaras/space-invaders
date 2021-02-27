@@ -1,5 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Globalization;
+using DI;
+using EnemyScripts;
+using LaserScripts;
+using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace PlayerScripts
 {
@@ -10,8 +16,9 @@ namespace PlayerScripts
         [Header("Result Screen Text")]
         [SerializeField]private Text resultScoreText, resultWaveText;
     
-        private float _playerScore;
+        private int _playerScore;
         private int _enemyWave;
+        private IHighScores _highScores;
 
         private void OnEnable()
         {
@@ -44,7 +51,8 @@ namespace PlayerScripts
         {
             resultScoreText.text = "Score: " + _playerScore;
             resultWaveText.text = "Wave: " + _enemyWave;
-        
+            _highScores.CheckUpdateList(new HighScoreDTO(_playerScore, DateTime.Now.ToString(CultureInfo.InvariantCulture)));
+
             _enemyWave = 0;
             waveText.text = "Wave: " + _enemyWave;
 
@@ -52,5 +60,11 @@ namespace PlayerScripts
             scoreText.text = "Score: " + _playerScore;
         }
     
+        [Inject]    
+        public void SetHighScores(IHighScores highScores)
+        {
+            _highScores = highScores;
+        }
     }
+    
 }

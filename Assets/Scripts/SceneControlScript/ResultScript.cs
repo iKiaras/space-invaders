@@ -1,26 +1,30 @@
-﻿using UnityEngine;
+﻿using LoadingScripts;
+using UnityEngine;
 
-public class ResultScript : MonoBehaviour
+namespace SceneControlScript
 {
-   [SerializeField] private GameObject resultScreen;
-   private void OnEnable()
+   public class ResultScript : MonoBehaviour
    {
-      GameManager.GameEndedEvent += ShowResultsScreen;
-   }
+      [SerializeField] private GameObject resultScreen;
+      private void OnEnable()
+      {
+         GameManager.GameEndedEvent += ShowResultsScreen;
+      }
 
-   private void OnDisable()
-   {
-      GameManager.GameEndedEvent -= ShowResultsScreen;
+      private void OnDisable()
+      {
+         GameManager.GameEndedEvent -= ShowResultsScreen;
 
-   }
+      }
 
-   private void ShowResultsScreen()
-   {
-      resultScreen.SetActive(true);
-   }
+      private void ShowResultsScreen()
+      {
+         resultScreen.SetActive(true);
+      }
    
-   public void GoToMainMenu()
-   {
-      SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+      public void GoToMainMenu()
+      {
+         SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+      }
    }
 }

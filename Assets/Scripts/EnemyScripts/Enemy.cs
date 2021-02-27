@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DI;
+using UnityEngine;
+using Zenject;
 
 namespace EnemyScripts
 {
@@ -7,7 +9,9 @@ namespace EnemyScripts
         [SerializeField] private int row;
         private MeshFilter _meshFilter;
         private bool _meshFilled = false;
-
+        
+        private ILoader _iLoader;
+        
         private void Start()
         {
             _meshFilter = GetComponent<MeshFilter>();
@@ -15,12 +19,18 @@ namespace EnemyScripts
 
         private void Update()
         {
-            if (!_meshFilled && Loader.Instance.enemiesList.Count > 0)
+            if (!_meshFilled && _iLoader.GetEnemiesList().Count > 0)
             {
                 _meshFilled = true;
             
-                _meshFilter.mesh = Loader.Instance.enemiesList[row].GetComponent<MeshFilter>().sharedMesh;
+                _meshFilter.mesh = _iLoader.GetEnemiesList()[row].GetComponent<MeshFilter>().sharedMesh;
             }
+        }
+
+        [Inject]
+        public void SetILoader(ILoader iLoader)
+        {
+            _iLoader = iLoader;
         }
     }
 }

@@ -13,6 +13,3 @@ MonoBehaviour:
   m_Name: NPC_1
   m_EditorClassIdentifier: 
   body: {fileID: 5647766793736519169, guid: df2d11c74e67274489798dfba020cdfc, type: 3}
-  attackSpeed: 1
-  pointsGiven: 10
-  name: UFO

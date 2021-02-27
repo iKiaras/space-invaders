@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LoadingScripts;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class MainMenuScript : MonoBehaviour

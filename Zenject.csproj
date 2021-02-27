@@ -514,20 +514,23 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>D:/Unity Projects/2020.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
- <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+ <Reference Include="ArduinoBluetoothAPI">
+ <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
  </Reference>
  <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
  <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
  </Reference>
- <Reference Include="Zenject-usage">
- <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
+ <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+ <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
  <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
  </Reference>
  <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
  <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+ </Reference>
+ <Reference Include="Zenject-usage">
+ <HintPath>D:/Unity/Unity Projects/Rage Quit Games - Technical Assessment/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>D:/Unity Projects/2020.1.7f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

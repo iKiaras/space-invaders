@@ -9,18 +9,24 @@ namespace DI
         private static readonly string HighscoreKey = "HighScores";
         private HighScoreList _highScoreList;
 
-        public void LoadHighScores()
+        
+
+        public HighScoreList GetHighScores()
+        {
+            if (_highScoreList == null)
+            {
+                LoadHighScores();
+            }
+            return _highScoreList;
+        }
+        
+        private void LoadHighScores()
         {
             _highScoreList = (HighScoreList) JsonUtility.FromJson(PlayerPrefs.GetString(HighscoreKey), (typeof(HighScoreList)));
             if (_highScoreList == null)
             {
                 _highScoreList = new HighScoreList();
             }
-        }
-
-        public HighScoreList GetHighScores()
-        {
-            return _highScoreList;
         }
 
         public void CheckUpdateList(HighScoreDTO newScore)
@@ -31,18 +37,19 @@ namespace DI
             }
             else
             {
-                _highScoreList.GetHighScoreList().Sort((a, b) => a.GetScore().CompareTo(b.GetScore()));
+                _highScoreList.GetHighScoreList().Add(newScore);
+                _highScoreList.GetHighScoreList().Sort((a, b) => b.GetScore().CompareTo(a.GetScore()));
 
                 if (_highScoreList.GetHighScoreList().Count > 10)
                 {
-                    _highScoreList.GetHighScoreList().RemoveRange(10, _highScoreList.GetHighScoreList().Count-1);
+                    _highScoreList.GetHighScoreList().RemoveAt(10);
                 }
             
-                SaveHighScores();
+                
             }
-            
+            SaveHighScores();
         }
-        
+
         private void SaveHighScores()
         {
             PlayerPrefs.SetString(HighscoreKey,JsonUtility.ToJson(_highScoreList));

@@ -1,13 +1,14 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace PlayerScripts
 {
+    [Serializable]
     public class HighScoreList
     {
         [SerializeField]
-        private List<HighScoreDTO> _scores;
+        private List<HighScoreDTO> _scores = new List<HighScoreDTO>();
 
         public HighScoreList()
         {
@@ -24,7 +25,7 @@ namespace PlayerScripts
 
             foreach (HighScoreDTO highScore in _scores)
             {
-                toString += highScore.GetScore() + " - " + highScore.GetDate() + "/n";
+                toString += highScore.GetScore() + " - " + highScore.GetDate() + "\n";
             }
 
             return toString;

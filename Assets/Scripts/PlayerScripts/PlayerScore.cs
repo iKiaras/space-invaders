@@ -3,6 +3,7 @@ using System.Globalization;
 using DI;
 using EnemyScripts;
 using LaserScripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -12,9 +13,9 @@ namespace PlayerScripts
     public class PlayerScore : MonoBehaviour
     {
         [Header("Game Screen Text")]
-        [SerializeField]private Text scoreText, waveText;
+        [SerializeField]private TextMeshProUGUI scoreText, waveText;
         [Header("Result Screen Text")]
-        [SerializeField]private Text resultScoreText, resultWaveText;
+        [SerializeField]private TextMeshProUGUI resultScoreText, resultWaveText;
     
         private int _playerScore;
         private int _enemyWave;
@@ -51,7 +52,7 @@ namespace PlayerScripts
         {
             resultScoreText.text = "Score: " + _playerScore;
             resultWaveText.text = "Wave: " + _enemyWave;
-            _highScores.CheckUpdateList(new HighScoreDTO(_playerScore, DateTime.Now.ToString(CultureInfo.InvariantCulture)));
+            _highScores.CheckUpdateList(new HighScoreDTO(_playerScore, DateTime.Now.ToString("dd/MM/yyyy")));
 
             _enemyWave = 0;
             waveText.text = "Wave: " + _enemyWave;

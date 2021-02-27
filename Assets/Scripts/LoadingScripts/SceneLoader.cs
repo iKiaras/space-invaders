@@ -10,7 +10,8 @@ namespace LoadingScripts
         {
             LoadingScene,
             MainMenuScene,
-            GameScene
+            GameScene,
+            Test2Scene
         }
 
         private static Action _onSceneLoaderCallback;

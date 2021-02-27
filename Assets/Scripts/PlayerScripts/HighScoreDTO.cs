@@ -1,8 +1,10 @@
 ﻿
+using System;
 using UnityEngine;
 
 namespace PlayerScripts
 {
+    [Serializable]
     public class HighScoreDTO
     {
         [SerializeField]

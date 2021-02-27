@@ -10,27 +10,27 @@ namespace EnemyScripts
         private MeshFilter _meshFilter;
         private bool _meshFilled = false;
         
-        private ILoader _iLoader;
         
         private void Start()
         {
             _meshFilter = GetComponent<MeshFilter>();
+            
         }
 
         private void Update()
         {
-            if (!_meshFilled && _iLoader.GetEnemiesList().Count > 0)
-            {
-                _meshFilled = true;
-            
-                _meshFilter.mesh = _iLoader.GetEnemiesList()[row].GetComponent<MeshFilter>().sharedMesh;
-            }
+            // if (!_meshFilled && _iLoader.GetEnemiesList().Count > 0)
+            // {
+            //     _meshFilled = true;
+            //
+            //     _meshFilter.mesh = _iLoader.GetEnemiesList()[row].GetComponent<MeshFilter>().sharedMesh;
+            // }
         }
 
-        [Inject]
-        public void SetILoader(ILoader iLoader)
+        public int GetRow()
         {
-            _iLoader = iLoader;
+            return row;
         }
+        
     }
 }

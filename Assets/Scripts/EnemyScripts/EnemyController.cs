@@ -1,6 +1,8 @@
 ﻿using System;
+using DI;
 using LaserScripts;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace EnemyScripts
@@ -15,6 +17,8 @@ namespace EnemyScripts
         public static event Action BaseHit;
         public static event Action WaveSpawn;
         private Vector3 _position;
+        
+        private ILoader _iLoader;
 
         private void OnEnable()
         {
@@ -31,6 +35,7 @@ namespace EnemyScripts
             _enemyHolder = GetComponent<Transform>();
             _position = _enemyHolder.position;
             _laserController = GetComponent<LaserController>();
+            InitialiseEnemies();
             InvokeRepeating(nameof(MoveEnemy),0.1f,RepeatRate);
         }
     
@@ -45,7 +50,7 @@ namespace EnemyScripts
                     return;
                 }
 
-                if (Random.value > 0.976f) {
+                if (Random.value > 0.94f) {
                     _laserController.SpawnEnemyLaser(enemy);
                 }
             
@@ -57,7 +62,7 @@ namespace EnemyScripts
 
             if (_enemyHolder.childCount == 1) {
                 CancelInvoke ();
-                InvokeRepeating ("MoveEnemy", 0.1f, RepeatRate - 3f);
+                InvokeRepeating ("MoveEnemy", 0.1f, RepeatRate - .3f);
             }
 
             if (_enemyHolder.childCount == 0)
@@ -69,8 +74,18 @@ namespace EnemyScripts
                 {
                     enemy.parent = _enemyHolder;
                 }
+                InitialiseEnemies();
                 Destroy(enemiesList);
             }
+        }
+
+        private void InitialiseEnemies()
+        {
+            foreach (Enemy enemy in GetComponentsInChildren<Enemy>())
+            {
+                enemy.GetComponent<MeshFilter>().mesh = _iLoader.GetEnemiesList()[enemy.GetRow()].GetComponent<MeshFilter>().sharedMesh;
+            }
+            
         }
 
         public void SetMoveSpeed(float newMoveSpeed)
@@ -91,6 +106,12 @@ namespace EnemyScripts
         private void GameEnded()
         {
             CancelInvoke();
+        }
+        
+        [Inject]
+        public void SetILoader(ILoader iLoader)
+        {
+            _iLoader = iLoader;
         }
     }
 }
